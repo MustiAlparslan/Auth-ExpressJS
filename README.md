@@ -42,9 +42,6 @@ This application utilizes the following npm packages:
 - **passport-local**: Local username and password authentication strategy for Passport.
 - **socket.io**: Real-time bidirectional event-based communication.
 
-## License
-
-This project is licensed under the ISC license.
 
 ## Contribution
 
