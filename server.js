@@ -9,7 +9,7 @@ import Connection from "./src/Config/Connection.js";
 import flash from "connect-flash";
 import MongoDBStore from "connect-mongodb-session";
 import passport from "passport";
-
+import cors from "cors";
 // ROUTES
 import ErrorRoute from "./src/Router/404.js";
 import UserRouter from "./src/Router/UserRouter.js";
@@ -33,6 +33,7 @@ Connection();
 
 // middleware
 app.use(morgan("tiny"));
+app.use(cors());
 app.use(express.json());
 app.use(
   session({
@@ -58,7 +59,6 @@ app.use((req, res, next) => {
   res.locals.login_error = req.flash("login_error");
   next();
 });
-
 
 // Routes
 app.use("/api/user", UserRouter);
